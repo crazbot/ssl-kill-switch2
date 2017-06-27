@@ -40,17 +40,9 @@ static void SSKLog(NSString *format, ...)
 static BOOL shouldHookFromPreference(NSString *preferenceSetting)
 {
     BOOL shouldHook = NO;
-    NSMutableDictionary* plist = [[NSMutableDictionary alloc] initWithContentsOfFile:PREFERENCE_FILE];
+    //NSMutableDictionary* plist = [[NSMutableDictionary alloc] initWithContentsOfFile:PREFERENCE_FILE];
     
-    if (!plist)
-    {
-        SSKLog(@"Preference file not found.");
-    }
-    else
-    {
-        shouldHook = [[plist objectForKey:preferenceSetting] boolValue];
-        SSKLog(@"Preference set to %d.", shouldHook);
-    }
+    shouldHook = TRUE;
     return shouldHook;
 }
 #endif
